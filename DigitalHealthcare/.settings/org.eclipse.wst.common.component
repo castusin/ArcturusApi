@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="DigitalHealthcare">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/CISDataCommon"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/CommonCISValidation"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/RequestOTPService"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/SaveProfileDateService"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/GetProfileDataService"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/ValidateOTPService"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/SaveContentService"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/GetContentDataService"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/LoginService"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/ProfileUpdateService"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/CISCommunication"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/IsAccountCheckService"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/CISSessions"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/UserLogoutService"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/DigihealthCareSaveFeedBack"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/ForgetPasswordService"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/UpdatePassword"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/AdminCreateService"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/ViewPatientsService"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/AddCareTakers"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/AdminUpdateProfileService"/>
+        <property name="context-root" value="DigitalHealthcare"/>
+        <property name="java-output-path" value="/DigitalHealthcare/target/classes"/>
+    </wb-module>
+</project-modules>

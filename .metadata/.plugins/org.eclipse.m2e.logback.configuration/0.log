@@ -1,0 +1,17 @@
+2017-04-04 12:29:48,191 [Worker-1] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.digitalhealthcare:DigitalHealthcare:0.0.1-SNAPSHOT @ E:\GitHub\ArcturusApi\ArcturusApi\DigitalHealthcare\pom.xml.
+2017-04-04 12:29:49,854 [Worker-1] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.digitalhealthcare:DigitalHealthcare:0.0.1-SNAPSHOT @ E:\GitHub\ArcturusApi\ArcturusApi\DigitalHealthcare\pom.xml.
+2017-04-04 12:29:54,871 [Worker-11] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.digitalhealthcare:DigitalHealthcare:0.0.1-SNAPSHOT @ E:\GitHub\ArcturusApi\ArcturusApi\DigitalHealthcare\pom.xml.
+2017-04-04 12:30:01,597 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-04 12:30:01,607 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-04-04 12:30:01,672 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-04 12:30:01,672 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\GitHub\ArcturusApi\ArcturusApi\DigitalHealthcare\src\test\resources
+2017-04-04 12:30:02,890 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.digitalhealthcare:DigitalHealthcare:0.0.1-SNAPSHOT @ E:\GitHub\ArcturusApi\ArcturusApi\DigitalHealthcare\pom.xml.
+2017-04-04 12:30:04,170 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.digitalhealthcare:DigitalHealthcare:0.0.1-SNAPSHOT @ E:\GitHub\ArcturusApi\ArcturusApi\DigitalHealthcare\pom.xml.
+2017-04-04 12:30:05,332 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-04 12:30:05,365 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-04-04 12:30:05,370 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-04 12:30:05,371 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\GitHub\ArcturusApi\ArcturusApi\DigitalHealthcare\src\test\resources
+2017-04-04 12:30:17,917 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-04 12:30:17,919 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-04-04 12:30:17,922 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-04 12:30:17,923 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\GitHub\ArcturusApi\ArcturusApi\DigitalHealthcare\src\test\resources
