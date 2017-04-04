@@ -132,3 +132,104 @@ Caused by: java.io.IOException: The process cannot access the file because anoth
 	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:100)
 	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:188)
 	... 7 more
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-04-04 12:38:16.735
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-04-04 12:38:16.738
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-04-04 13:08:22.153
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-04-04 13:08:22.159
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2017-04-04 13:11:16.943
+!MESSAGE Publishing failed with multiple errors
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.944
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\activation-1.1.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.944
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\aopalliance-1.0.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.944
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\asm-3.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.944
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\async-http-client-1.8.14.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.944
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\c3p0-0.9.1.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.944
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\commons-codec-1.9.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.944
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\commons-logging-1.2.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.944
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\cors-filter-1.9.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.944
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\gson-2.6.2.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.944
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\guava-18.0.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.944
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\hamcrest-core-1.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.944
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\httpclient-4.5.2.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.944
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\httpcore-4.4.4.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.944
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\jackson-annotations-2.4.3.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.944
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\jackson-core-2.4.3.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.944
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\jackson-databind-2.4.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.945
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\java-property-utils-1.9.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.945
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\javax.ws.rs-api-2.0-m09.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.945
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\jaxb-api-2.2.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.945
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\jersey-core-1.17.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.945
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\jersey-server-1.17.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.945
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\jersey-servlet-1.17.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.945
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\jjwt-0.4.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.945
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\joda-time-2.5.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.946
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\junit-4.10.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.946
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\log4j-1.2.17.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.946
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\mail-1.4.5.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.946
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\mysql-connector-java-5.1.6.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.946
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\netty-3.9.2.Final.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.947
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\quartz-2.2.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.947
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\quartz-jobs-2.2.1.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.947
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\slf4j-api-1.6.6.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.947
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\spring-aop-4.1.5.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.947
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\spring-beans-4.1.5.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.947
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\spring-context-4.1.5.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.947
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\spring-core-4.1.4.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.947
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\spring-expression-4.1.5.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.948
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\spring-jdbc-4.0.6.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.948
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\spring-tx-4.0.6.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.948
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\spring-web-4.1.5.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.948
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\spring-webmvc-4.1.5.RELEASE.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.948
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\stax-api-1.0-2.jar. May be locked by another process.
+!SUBENTRY 1 org.eclipse.wst.server.core 4 0 2017-04-04 13:11:16.948
+!MESSAGE Could not delete E:\GitHub\ArcturusApi\ArcturusApi\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DigitalHealthcare\WEB-INF\lib\twilio-java-sdk-7.0.0-rc-4.jar. May be locked by another process.
