@@ -23,6 +23,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.cis.CISConstants;
 import com.cis.CISResults;
 import com.cis.SMSCommunication;
+import com.cis.TimeCheck;
 import com.cis.testServiceTime;
 /**
  * User Login Service. Validates password and generates session id
@@ -45,6 +46,13 @@ public class DigihealthCareLoginBL {
 	 * @throws Throwable
 	 */
 	public CISResults login(String userId,String password,String accountType) throws Throwable {
+		
+		
+		// Capture service Start time
+		TimeCheck time=new TimeCheck();
+		 testServiceTime seriveTimeCheck=new testServiceTime();
+		 String serviceStartTime=time.getTimeZone();
+		
 		final Logger logger = Logger.getLogger(DigihealthCareLoginBL.class);
 		List<DigiHealthCareViewPatientsService> patientDetails = null;
 		CISResults cisResult = loginDAO.login(userId,password,accountType);
@@ -72,6 +80,11 @@ public class DigihealthCareLoginBL {
 			   loginDAO.sessionEntry(userId,sessionId,sessionTime,deleteInd);
 		}
 		
+		
+		// Capture Service End time
+		  String serviceEndTime=time.getTimeZone();
+		  long result=seriveTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+		  logger.info("Database time for login service:: " +result );
 		return cisResult;
 	}
 }
