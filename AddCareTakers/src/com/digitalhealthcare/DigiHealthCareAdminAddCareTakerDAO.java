@@ -87,7 +87,7 @@ public class DigiHealthCareAdminAddCareTakerDAO extends JdbcDaoSupport {
 		CISResults cisResults=new CISResults();
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 		String careTakerNumber=CISConstants.USA_COUNTRY_CODE+phoneNumber;
-		String accounType="F";
+		String accounType=CISConstants.AccountType2;
 		Object[] inputs = new Object[]{careTakerNumber,accounType};
 		try{
 			// Capture service Start time

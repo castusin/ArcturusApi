@@ -67,26 +67,3 @@ public class DigihealthCareUserLogoutDAO extends JdbcDaoSupport {
 
 
 }
-/*Object[] input = new Object[]{userId,sessionId};
-
-
-try{
-	
-	userLogout=(DigihealthCareUserLogout)getJdbcTemplate().queryForObject(DigihealthCareUserLogoutQuery.SQL_GETDELETEIND,input, new DigihealthCareUserLogoutMapper());
-	
-	userLogout.setDeleteInd(userLogout.getDeleteInd());
-	
-	if(sessionId==deleteInd){
-		cisResults.setResponseCode(CISConstants.DELETE_IND_Y);
-		}
-	userLogout.setUserId(userId);
-	userLogout.setSessionId(sessionId);
-	
-	cisResults.setResultObject(userLogout);
-		
-} catch (DataAccessException e) {
-	e.printStackTrace();
-
-	cisResults.setResponseCode(CISConstants.RESPONSE_FAILURE);
-	cisResults.setErrorMessage("Failed to login to the system");
-}*/

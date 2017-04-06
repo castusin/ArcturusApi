@@ -43,7 +43,7 @@ public class DigihealthCareValidateOTPBL {
 		String deleteInd=CISConstants.DELETE_IND;
 		 Calendar currentdate = Calendar.getInstance();
 	      DateFormat formatter = new SimpleDateFormat(CISConstants.DATE_FORMAT);
-	      TimeZone obj = TimeZone.getTimeZone("CST");
+	      TimeZone obj = TimeZone.getTimeZone(CISConstants.TIME_ZONE);
 	      formatter.setTimeZone(obj);
 	     
 	    String OtpTimeGenerateTime;

@@ -38,7 +38,7 @@ public class DigihealthCareAdminCreateServiceBL {
 	
 		  Calendar currentdate = Calendar.getInstance();
 	      DateFormat formatter = new SimpleDateFormat(CISConstants.GS_DATE_FORMAT);
-	      TimeZone obj = TimeZone.getTimeZone("CST");
+	      TimeZone obj = TimeZone.getTimeZone(CISConstants.TIME_ZONE);
 	      formatter.setTimeZone(obj);
 	      String saveDate=formatter.format(currentdate.getTime());
 	      String careTakerphone="";

@@ -49,7 +49,7 @@ import com.cis.testServiceTime;
 			DigitalHealthCareIsAccountExistModel verifyPhoneNumber;
 			CISResults cisResults=new CISResults();
 			cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
-			String accountType="P";
+			String accountType=CISConstants.AccountType;
 			Object[] inputs = new Object[]{phoneNumber,accountType};
 			try{
 				// Capture service Start time

@@ -36,7 +36,7 @@ public class DigiHealthCareSaveProfileBL {
 		  DigihealthCareSaveProfile homeCareRegistration=new DigihealthCareSaveProfile();
 		  Calendar currentdate = Calendar.getInstance();
 	      DateFormat formatter = new SimpleDateFormat(CISConstants.GS_DATE_FORMAT);
-	      TimeZone obj = TimeZone.getTimeZone("CST");
+	      TimeZone obj = TimeZone.getTimeZone(CISConstants.TIME_ZONE);
 	      formatter.setTimeZone(obj);
 	      
 		  String sessionId = UUID.randomUUID().toString();

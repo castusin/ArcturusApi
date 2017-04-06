@@ -3,6 +3,7 @@ package com.digitalhealthcare;
 
 import java.util.Calendar;
 
+import org.apache.log4j.Logger;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
@@ -20,7 +21,7 @@ public class DigiHealthCareUpdatePasswordServiceDAO extends JdbcDaoSupport {
 		CISResults cisResult=new CISResults();
 		cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 		Object[] inputs = new Object[]{password,userId};
-		
+		Logger logger = Logger.getLogger(DigiHealthCareUpdatePasswordServiceDAO.class);
 		try{
 			// Capture service Start time
 			 TimeCheck time=new TimeCheck();
