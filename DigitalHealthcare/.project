@@ -43,107 +43,107 @@
 		<link>
 			<name>AddCareTakers</name>
 			<type>2</type>
-			<location>E:/DigitalHealthCareWebservices/AddCareTakers/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/AddCareTakers/src</location>
 		</link>
 		<link>
 			<name>AdminCreateService</name>
 			<type>2</type>
-			<location>E:/DigitalHealthCareWebservices/AdminCreateService/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/AdminCreateService/src</location>
 		</link>
 		<link>
 			<name>AdminUpdateProfileService</name>
 			<type>2</type>
-			<location>E:/DigitalHealthCareWebservices/AdminUpdateProfileService/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/AdminUpdateProfileService/src</location>
 		</link>
 		<link>
 			<name>CISCommunication</name>
 			<type>2</type>
-			<location>D:/DigitalHealthCareWebservices/CISCommunication/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/CISCommunication/src</location>
 		</link>
 		<link>
 			<name>CISDataCommon</name>
 			<type>2</type>
-			<location>D:/DigitalHealthCareWebservices/CISDataCommon/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/CISDataCommon/src</location>
 		</link>
 		<link>
 			<name>CISSessions</name>
 			<type>2</type>
-			<location>E:/DigitalHealthCareWebservices/CISSessions/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/CISSessions/src</location>
 		</link>
 		<link>
 			<name>CommonCISValidation</name>
 			<type>2</type>
-			<location>D:/DigitalHealthCareWebservices/CommonCISValidation/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/CommonCISValidation/src</location>
 		</link>
 		<link>
 			<name>DigihealthCareSaveFeedBack</name>
 			<type>2</type>
-			<location>E:/DigitalHealthCareWebservices/DigihealthCareSaveFeedBack/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/DigihealthCareSaveFeedBack/src</location>
 		</link>
 		<link>
 			<name>ForgetPasswordService</name>
 			<type>2</type>
-			<location>E:/DigitalHealthCareWebservices/ForgetPasswordService/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/ForgetPasswordService/src</location>
 		</link>
 		<link>
 			<name>GetContentDataService</name>
 			<type>2</type>
-			<location>D:/DigitalHealthCareWebservices/GetContentDataService/GetContentDataService/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/GetContentDataService/GetContentDataService/src</location>
 		</link>
 		<link>
 			<name>GetProfileDataService</name>
 			<type>2</type>
-			<location>D:/DigitalHealthCareWebservices/GetProfileDataService/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/GetProfileDataService/src</location>
 		</link>
 		<link>
 			<name>IsAccountCheckService</name>
 			<type>2</type>
-			<location>E:/DigitalHealthCareWebservices/IsAccountCheckService/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/IsAccountCheckService/src</location>
 		</link>
 		<link>
 			<name>LoginService</name>
 			<type>2</type>
-			<location>D:/DigitalHealthCareWebservices/LoginService/LoginService/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/LoginService/LoginService/src</location>
 		</link>
 		<link>
 			<name>ProfileUpdateService</name>
 			<type>2</type>
-			<location>D:/DigitalHealthCareWebservices/ProfileUpdateService/ProfileUpdateService/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/ProfileUpdateService/ProfileUpdateService/src</location>
 		</link>
 		<link>
 			<name>RequestOTPService</name>
 			<type>2</type>
-			<location>D:/DigitalHealthCareWebservices/RequestOTPService/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/RequestOTPService/src</location>
 		</link>
 		<link>
 			<name>SaveContentService</name>
 			<type>2</type>
-			<location>D:/DigitalHealthCareWebservices/SaveContentService/SaveContentService/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/SaveContentService/SaveContentService/src</location>
 		</link>
 		<link>
 			<name>SaveProfileDateService</name>
 			<type>2</type>
-			<location>D:/DigitalHealthCareWebservices/SaveProfileDateService/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/SaveProfileDateService/src</location>
 		</link>
 		<link>
 			<name>UpdatePassword</name>
 			<type>2</type>
-			<location>E:/DigitalHealthCareWebservices/UpdatePassword/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/UpdatePassword/src</location>
 		</link>
 		<link>
 			<name>UserLogoutService</name>
 			<type>2</type>
-			<location>E:/DigitalHealthCareWebservices/UserLogoutService/UserLogoutService/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/UserLogoutService/UserLogoutService/src</location>
 		</link>
 		<link>
 			<name>ValidateOTPService</name>
 			<type>2</type>
-			<location>D:/DigitalHealthCareWebservices/ValidateOTPService/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/ValidateOTPService/src</location>
 		</link>
 		<link>
 			<name>ViewPatientsService</name>
 			<type>2</type>
-			<location>E:/DigitalHealthCareWebservices/ViewPatientsService/src</location>
+			<location>E:/GitHub/ArcturusApi/ArcturusApi/ViewPatientsService/src</location>
 		</link>
 	</linkedResources>
 </projectDescription>

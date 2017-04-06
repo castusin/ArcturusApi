@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cis.CISConstants;
 import com.cis.CISResults;
+import com.cis.TimeCheck;
 import com.cis.testServiceTime;
 import com.google.gson.Gson;
 import com.validation.CommonCISValidation;
@@ -36,14 +37,10 @@ public class DigiHealthCareAddCareTakers {
 	 public String requestOTP(HttpServletRequest request,@RequestParam ("userId") String userId,@RequestParam ("phoneNumber") String phoneNumber){
 	
 		// Capture service Start time
-				 testServiceTime sessionTimeCheck=new testServiceTime();
-				 Calendar currentdate = Calendar.getInstance();
-			      DateFormat formatter = new SimpleDateFormat(CISConstants.DATE_FORMAT);
-			      TimeZone obj = TimeZone.getTimeZone(CISConstants.TIME_ZONE);
-			      formatter.setTimeZone(obj);
-			      System.out.println("Local:: " +currentdate.getTime());
-			      System.out.println("CST:: "+ formatter.format(currentdate.getTime()));
-				  String serviceStartTime=formatter.format(currentdate.getTime());
+		 TimeCheck time=new TimeCheck();
+		 testServiceTime sessionTimeCheck=new testServiceTime();
+		 String serviceStartTime=time.getTimeZone();
+		
 		Logger logger = Logger.getLogger(DigiHealthCareAddCareTakers.class);
 		CommonCISValidation CommonCISValidation=new CommonCISValidation();
 		CISResults cisResult=CommonCISValidation.addCareTakers(request,userId,phoneNumber);
@@ -54,13 +51,10 @@ public class DigiHealthCareAddCareTakers {
 		 }
 		
 		// Capture Service End time
-		  Calendar ServiceEnd= Calendar.getInstance();
-	      DateFormat formatter1 = new SimpleDateFormat(CISConstants.DATE_FORMAT);
-	      TimeZone obj1 = TimeZone.getTimeZone(CISConstants.TIME_ZONE);
-	      formatter1.setTimeZone(obj1);
-		  String serviceEndTime=formatter1.format(ServiceEnd.getTime());
-		  sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
-		  
+		String serviceEndTime=time.getTimeZone();
+		long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+		
+		logger.info("Total service time for addcaretakers service in milli seconds:: " +result );
 		return returnJsonData(cisResult);
 		
 

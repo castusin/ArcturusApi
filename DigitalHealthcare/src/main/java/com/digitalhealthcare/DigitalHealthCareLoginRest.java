@@ -1,6 +1,11 @@
 package com.digitalhealthcare;
 
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.TimeZone;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
@@ -11,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cis.CISConstants;
 import com.cis.CISResults;
+import com.cis.TimeCheck;
+import com.cis.testServiceTime;
 import com.google.gson.Gson;
 import com.validation.CommonCISValidation;
 
@@ -36,6 +43,13 @@ public class DigitalHealthCareLoginRest {
 		 Logger logger = Logger.getLogger(DigitalHealthCareLoginRest.class);
 		 String loginServiceParameters = "userId=" +userId + "&accountType=" + accountType+"&password=" + password ;
 		 logger.info(" DigitalHealthCare: loginService :"+loginServiceParameters);
+		 
+		// Capture service Start time
+		 TimeCheck time=new TimeCheck();
+		 testServiceTime sessionTimeCheck=new testServiceTime();
+		 String serviceStartTime=time.getTimeZone();
+		 
+		 
 		 CommonCISValidation CommonCISValidation=new CommonCISValidation();
 		 CISResults cisResult=CommonCISValidation.loginValidation(userId,password,accountType,request);
 		  if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
@@ -43,6 +57,12 @@ public class DigitalHealthCareLoginRest {
 		     DigihealthCareLoginWebservice loginService= new DigihealthCareLoginWebservice();
 		     cisResult  = loginService.login(userId,password,accountType);
 		  }
+		  
+		  
+		// Capture Service End time
+		  String serviceEndTime=time.getTimeZone();
+		  long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+		  logger.info("Total service time for login service in milli seconds :: " +result );
 		 return returnJsonData(cisResult);
 	 }
 	 
