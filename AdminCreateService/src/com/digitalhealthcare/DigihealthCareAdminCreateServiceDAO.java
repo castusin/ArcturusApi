@@ -32,7 +32,7 @@ import com.cis.testServiceTime;
 				getJdbcTemplate().update(DigihealthCareAdminCreateServiceQuery.SQL_PATIENT_INFO,appId,userId,accountType,firstName,lastName,phoneNumber,password,emailId,gender,photo,dob,saveDate);
 				 String serviceEndTime=time.getTimeZone();
 				 sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
-				 logger.info("patient info query time:: " +cisResults);
+				 logger.info("Add patient info query time:: " +cisResults);
 			} catch (DataAccessException e) {
 				e.printStackTrace();
 			

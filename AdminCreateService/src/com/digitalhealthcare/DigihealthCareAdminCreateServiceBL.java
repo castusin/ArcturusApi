@@ -67,7 +67,7 @@ public class DigihealthCareAdminCreateServiceBL {
 	      formatter1.setTimeZone(obj1);
 		  String serviceEndTime=formatter1.format(ServiceEnd.getTime());
 		  long result=seriveTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
-		  logger.info("Admin update profile query time:: " +result);
+		  logger.info("Database time for Add patients service:: " +result);
 		return cisResult;
 		
 	}
