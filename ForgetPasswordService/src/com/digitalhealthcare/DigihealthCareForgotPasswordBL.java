@@ -118,14 +118,6 @@ public class DigihealthCareForgotPasswordBL {
 		
 		logger.info("DigitalHealthCare:ProfileDataBL  service" +cisResults );
 		
-		
-		
-		
-	
-	
-	
-		
-	
 	
 	return cisResults;
 	}

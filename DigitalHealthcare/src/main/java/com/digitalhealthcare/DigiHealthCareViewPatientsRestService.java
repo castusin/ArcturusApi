@@ -1,6 +1,11 @@
 package com.digitalhealthcare;
 
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.TimeZone;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
@@ -10,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cis.CISConstants;
 import com.cis.CISResults;
+import com.cis.TimeCheck;
+import com.cis.testServiceTime;
 import com.google.gson.Gson;
 import com.validation.CommonCISValidation;
 
@@ -24,6 +31,13 @@ public class DigiHealthCareViewPatientsRestService {
 		 Logger logger = Logger.getLogger(DigitalHealthCareGetProfileDataRest.class);
 		 /*String requestParameters = "firstName=" + firstName + "&lastName=" +lastName + "&phoneNumber="+phoneNumber+ "&emailId="+emailId+ "&gender="+gender;*/
 		  //logger.info("Digital HealthCare view patients Request Parameters :"+requestParameters);
+		 
+		// Capture service Start time
+		  TimeCheck time=new TimeCheck();
+		 testServiceTime sessionTimeCheck=new testServiceTime();
+		 String serviceStartTime=time.getTimeZone();
+ 
+		 
 		 CommonCISValidation CommonCISValidation=new CommonCISValidation();
 		 CISResults cisResults=CommonCISValidation.viewPatientsValidation(request,viewPatients);
 		if(cisResults.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
@@ -32,6 +46,11 @@ public class DigiHealthCareViewPatientsRestService {
 			   cisResults  = patientsServiceWebservice.viewPatients(viewPatients);
 		  logger.info(" DigitalHealthCare:viewPatients :"+cisResults);
 		}
+		
+		// Capture Service End time
+		 String serviceEndTime=time.getTimeZone();
+		 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+		 logger.info("Total service time for view patients service in milli seconds :: " +result );
 		  return returnJsonData(cisResults);
 	 }
 	 	 

@@ -38,7 +38,7 @@ public class DigiHealthCareProfileUpdateBL {
 		final Logger logger = Logger.getLogger(DigiHealthCareProfileUpdateBL.class);
 		//String phoneNumber=CISConstants.USA_COUNTRY_CODE+updateProfile.getPhoneNumber(); 
 		CISResults cisResult = profileUpdateDAO.updateProfile(updateProfile.getAppId(),updateProfile.getPhoneNumber(),updateProfile.getUserId(),updateProfile.getAccountType(),updateProfile.getFirstName(),updateProfile.getLastName(),updateProfile.getEmailId(),updateProfile.getGender(),updateProfile.getPhoto(),updateProfile.getDob());
-		logger.debug("DigitalHealthCare:saveFeedback dao service" +cisResult );
+		logger.info("DigitalHealthCare:saveFeedback dao service" +cisResult );
 		return cisResult;
 	}
 

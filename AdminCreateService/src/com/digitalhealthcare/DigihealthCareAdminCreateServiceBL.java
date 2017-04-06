@@ -9,11 +9,13 @@ import java.util.TimeZone;
 import java.util.UUID;
 
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.cis.CISConstants;
 import com.cis.CISResults;
+import com.cis.testServiceTime;
 
 public class DigihealthCareAdminCreateServiceBL {
 	ApplicationContext ctx=new ClassPathXmlApplicationContext("spring-servlet.xml");
@@ -21,6 +23,18 @@ public class DigihealthCareAdminCreateServiceBL {
 
 
 	public CISResults addPatients(DigihealthCareSaveProfile savePatient) {
+		
+		Logger logger = Logger.getLogger(DigihealthCareAdminCreateServiceBL.class);
+		
+		// Capture service Start time
+		 testServiceTime seriveTimeCheck=new testServiceTime();
+		 Calendar current = Calendar.getInstance();
+	      DateFormat formatterTime = new SimpleDateFormat(CISConstants.DATE_FORMAT);
+	      TimeZone objTime = TimeZone.getTimeZone(CISConstants.TIME_ZONE);
+	      formatterTime.setTimeZone( objTime);
+	    //  System.out.println("Local:: " +current.getTime());
+	    //  System.out.println("CST:: "+ formatterTime.format(current.getTime()));
+		  String serviceStartTime=formatterTime.format(current.getTime());
 	
 		  Calendar currentdate = Calendar.getInstance();
 	      DateFormat formatter = new SimpleDateFormat(CISConstants.GS_DATE_FORMAT);
@@ -46,6 +60,14 @@ public class DigihealthCareAdminCreateServiceBL {
 	         cisResult = adminCreateServiceDAO.addPatients(savePatient.getAppId(),userId,savePatient.getAccountType(),savePatient.getFirstName(),savePatient.getLastName(),phoneNumber,savePatient.getPassword(),savePatient.getEmailId(),savePatient.getGender(),savePatient.getPhoto(),savePatient.getDob(),saveDate,sessionId);
 		  }
 		
+	   // Capture Service End time
+		  Calendar ServiceEnd= Calendar.getInstance();
+	      DateFormat formatter1 = new SimpleDateFormat(CISConstants.DATE_FORMAT);
+	      TimeZone obj1 = TimeZone.getTimeZone(CISConstants.TIME_ZONE);
+	      formatter1.setTimeZone(obj1);
+		  String serviceEndTime=formatter1.format(ServiceEnd.getTime());
+		  long result=seriveTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+		  logger.info("Admin update profile query time:: " +result);
 		return cisResult;
 		
 	}

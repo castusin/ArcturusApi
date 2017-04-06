@@ -2,65 +2,37 @@ package com.digitalhealthcare;
 
 import com.cis.CISResults;
 
+import org.apache.log4j.Logger;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 import com.cis.CISConstants;
 import com.cis.CISResults;
+import com.cis.TimeCheck;
+import com.cis.testServiceTime;
 
 
 	public class DigihealthCareAdminCreateServiceDAO extends JdbcDaoSupport {
 
-		/*public CISResults addPatients(int patientId, String firstName,String lastName, String phoneNumber, String emailId,String type, String age, String gender, String saveDate) {
-			// TODO Auto-generated method stub
-			CISResults cisResults=new CISResults();
-			cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
-			try{
-				getJdbcTemplate().update(DigihealthCareAdminCreateServiceQuery.SQL_PATIENT_INFO,patientId,firstName,lastName,phoneNumber,emailId,type,age,gender,saveDate);
-				
-			} catch (DataAccessException e) {
-				e.printStackTrace();
-			
-				cisResults.setResponseCode(CISConstants.RESPONSE_FAILURE);
-				cisResults.setErrorMessage("Failed At DataAccess");
-			}
-
-	   		return cisResults; 
-			
-		}*/
-
-
-	/*	public CISResults saveCareTakerDetails(String patientId, String careTakerphone) {
-			
-			
-			DigihealthCareAdminCreateService savePatient=new DigihealthCareAdminCreateService();
-			
-		      String phoneNumber=CISConstants.USA_COUNTRY_CODE+careTakerphone;
-			CISResults cisResults=new CISResults();
-			cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
-			try{
-				getJdbcTemplate().update(DigihealthCareAdminCreateServiceQuery.SQL_CARETAKERS_DETAILS,patientId,phoneNumber);
-				
-			} catch (DataAccessException e) {
-				e.printStackTrace();
-				cisResults.setResponseCode(CISConstants.RESPONSE_FAILURE);
-				cisResults.setErrorMessage("Failed At DataAccess");
-			}
-
-	   		return cisResults; 
-		}
-*/
-
+		
 		public CISResults addPatients(String appId, String userId,
 				String accountType, String firstName, String lastName,
 				String phoneNumber,  String password,
 				String emailId, String gender, String photo, String dob,
 				String saveDate, String sessionId) {
+			
+			Logger logger = Logger.getLogger(DigihealthCareAdminCreateServiceDAO.class);
 			CISResults cisResults=new CISResults();
 			cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 			try{
+				// Capture service Start time
+				 TimeCheck time=new TimeCheck();
+				 testServiceTime sessionTimeCheck=new testServiceTime();
+				 String serviceStartTime=time.getTimeZone();
 				getJdbcTemplate().update(DigihealthCareAdminCreateServiceQuery.SQL_PATIENT_INFO,appId,userId,accountType,firstName,lastName,phoneNumber,password,emailId,gender,photo,dob,saveDate);
-				
+				 String serviceEndTime=time.getTimeZone();
+				 sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+				 logger.info("patient info query time:: " +cisResults);
 			} catch (DataAccessException e) {
 				e.printStackTrace();
 			
@@ -73,15 +45,23 @@ import com.cis.CISResults;
 		}
 
 		public CISResults isAccountExists(String phoneNumber) {
-			// TODO Auto-generated method stub
+			Logger logger = Logger.getLogger(DigihealthCareAdminCreateServiceDAO.class);
 			DigitalHealthCareIsAccountExistModel verifyPhoneNumber;
 			CISResults cisResults=new CISResults();
 			cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 			String accountType="P";
 			Object[] inputs = new Object[]{phoneNumber,accountType};
 			try{
+				// Capture service Start time
+				 TimeCheck time=new TimeCheck();
+				 testServiceTime sessionTimeCheck=new testServiceTime();
+				 String serviceStartTime=time.getTimeZone();
 				 verifyPhoneNumber=(DigitalHealthCareIsAccountExistModel)getJdbcTemplate().queryForObject(DigiHealthCareAdminAddCareTakerQuery.SQL_CHECK_CARETAKER,inputs,new DigitalHealthCareIsCareTakerExistMapper());
-				if(verifyPhoneNumber!=null){
+				 String serviceEndTime=time.getTimeZone();
+				 sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+				 logger.info("check care taker query time:: " +cisResults);
+				 
+				 if(verifyPhoneNumber!=null){
 					cisResults.setResponseCode(CISConstants.RESPONSE_FAILURE);
 					cisResults.setErrorMessage(CISConstants.ACCOUNT_STATUS5);
 					//cisResults.setResultObject(verifyPhoneNumber);

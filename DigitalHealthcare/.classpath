@@ -6,38 +6,32 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="AdminUpdateProfileService"/>
 	<classpathentry kind="src" path="ViewPatientsService"/>
-	<classpathentry kind="src" path="AdminCreateService"/>
+	<classpathentry kind="src" path="ValidateOTPService"/>
+	<classpathentry kind="src" path="UserLogoutService"/>
 	<classpathentry kind="src" path="UpdatePassword"/>
-	<classpathentry kind="src" path="ForgetPasswordService"/>
-	<classpathentry kind="src" path="DigihealthCareSaveFeedBack"/>
+	<classpathentry kind="src" path="SaveProfileDateService"/>
+	<classpathentry kind="src" path="SaveContentService"/>
+	<classpathentry kind="src" path="RequestOTPService"/>
 	<classpathentry kind="src" path="ProfileUpdateService"/>
 	<classpathentry kind="src" path="LoginService"/>
+	<classpathentry kind="src" path="IsAccountCheckService"/>
+	<classpathentry kind="src" path="GetProfileDataService"/>
+	<classpathentry kind="src" path="GetContentDataService"/>
+	<classpathentry kind="src" path="ForgetPasswordService"/>
+	<classpathentry kind="src" path="DigihealthCareSaveFeedBack"/>
 	<classpathentry kind="src" path="CommonCISValidation"/>
+	<classpathentry kind="src" path="CISSessions"/>
+	<classpathentry kind="src" path="CISDataCommon"/>
+	<classpathentry kind="src" path="CISCommunication"/>
+	<classpathentry kind="src" path="AdminUpdateProfileService"/>
+	<classpathentry kind="src" path="AdminCreateService"/>
+	<classpathentry kind="src" path="AddCareTakers"/>
 	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
-		<attributes>
-			<attribute name="optional" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="src" path="CISDataCommon"/>
-	<classpathentry kind="src" path="RequestOTPService"/>
-	<classpathentry kind="src" path="SaveProfileDateService"/>
-	<classpathentry kind="src" path="GetProfileDataService"/>
-	<classpathentry kind="src" path="ValidateOTPService"/>
-	<classpathentry kind="src" path="SaveContentService"/>
-	<classpathentry kind="src" path="GetContentDataService"/>
-	<classpathentry kind="src" path="CISCommunication"/>
-	<classpathentry kind="src" path="IsAccountCheckService"/>
-	<classpathentry kind="src" path="CISSessions"/>
-	<classpathentry kind="src" path="UserLogoutService"/>
-	<classpathentry kind="src" path="AddCareTakers"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>

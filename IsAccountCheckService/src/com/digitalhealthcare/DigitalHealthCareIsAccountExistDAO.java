@@ -5,12 +5,15 @@ package com.digitalhealthcare;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 import com.cis.CISConstants;
 import com.cis.CISResults;
 import com.cis.CISSessionModel;
+import com.cis.TimeCheck;
+import com.cis.testServiceTime;
 
 /**
  * Queries database to check if accounts exists for the input phone number. 
@@ -23,14 +26,21 @@ public class DigitalHealthCareIsAccountExistDAO  extends JdbcDaoSupport{
 	 * @return Returns 0 if account exists , 1 if account doesn't exists
 	 */
 	public CISResults isAccountExists(String contactNumber) {
-		// TODO Auto-generated method stub
+		Logger logger = Logger.getLogger(DigitalHealthCareIsAccountExistDAO.class);
 		DigitalHealthCareIsAccountExistModel verifyPhoneNumber;
 		CISResults cisResults=new CISResults();
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 		Object[] inputs = new Object[]{contactNumber};
 		try{
+			// Capture service Start time
+			 TimeCheck time=new TimeCheck();
+			 testServiceTime sessionTimeCheck=new testServiceTime();
+			 String serviceStartTime=time.getTimeZone();
 			 verifyPhoneNumber=(DigitalHealthCareIsAccountExistModel)getJdbcTemplate().queryForObject(DigiHealthCareAccountExistQuery.SQL_VALIDATE_ACCOUNT,inputs,new DigitalHealthCareIsAccountExistMapper());
-			if(verifyPhoneNumber!=null){
+			 String serviceEndTime=time.getTimeZone();
+			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+			 logger.info("Is account exist validate account query time:: " +result);
+			 if(verifyPhoneNumber!=null){
 				String password=verifyPhoneNumber.getPassword();
 				if(password.contentEquals(""))
 				{
@@ -58,14 +68,21 @@ public class DigitalHealthCareIsAccountExistDAO  extends JdbcDaoSupport{
 	 * @return
 	 */
 	public CISResults checkCareTakerDetails(String contactNumber) {
-		// TODO Auto-generated method stub
+		Logger logger = Logger.getLogger(DigitalHealthCareIsAccountExistDAO.class);
 		DigitalHalthCareTakersModel digitalHalthCareTakersModel = new DigitalHalthCareTakersModel() ;
 		CISResults cisResults=new CISResults();
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 		Object[] inputs = new Object[]{contactNumber};
 		try{
-			List result= getJdbcTemplate().query(DigiHealthCareAccountExistQuery.SQL_CHECK_CARETAKERS,inputs,new DigitalHealthCareIsCareTakerExistMapper());
-				if(result.size()!=0){
+			// Capture service Start time
+			 TimeCheck time=new TimeCheck();
+			 testServiceTime sessionTimeCheck=new testServiceTime();
+			 String serviceStartTime=time.getTimeZone();
+		   	List result= getJdbcTemplate().query(DigiHealthCareAccountExistQuery.SQL_CHECK_CARETAKERS,inputs,new DigitalHealthCareIsCareTakerExistMapper());
+		    String serviceEndTime=time.getTimeZone();
+		    long results=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+			 logger.info("Is account exist Check care taker query time:: " +results);	
+		   	if(result.size()!=0){
 					digitalHalthCareTakersModel.setAccountType(CISConstants.FAMILY_FLAG);
 					digitalHalthCareTakersModel.setPassword(CISConstants.NO);
 					cisResults.setResultObject(digitalHalthCareTakersModel);
@@ -88,13 +105,20 @@ public class DigitalHealthCareIsAccountExistDAO  extends JdbcDaoSupport{
 
 	public CISResults checkPhoneNumberDeviceId(
 			String deviceId) {
-		// TODO Auto-generated method stub
+		Logger logger = Logger.getLogger(DigitalHealthCareIsAccountExistDAO.class);
 		DigitalHealthCareUserDeviceModel verifyDevice;
 		CISResults cisResults=new CISResults();
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 		Object[] inputs = new Object[]{deviceId};
 		try{
+			// Capture service Start time
+			 TimeCheck time=new TimeCheck();
+			 testServiceTime sessionTimeCheck=new testServiceTime();
+			 String serviceStartTime=time.getTimeZone();
 			verifyDevice=(DigitalHealthCareUserDeviceModel)getJdbcTemplate().queryForObject(DigiHealthCareAccountExistQuery.SQL_CHECK_DEVICE_PHONE,inputs,new DigitalHealthCareIsAccountExistDeviceUserIdMapper());
+			 String serviceEndTime=time.getTimeZone();
+			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+			 logger.info("Is account exist check device phonenumber query time:: " +result);
 			if(verifyDevice!=null){
 				//cisResults.setResultObject(verifyDevice);
 				cisResults.setResponseCode(CISConstants.RESPONSE_FAILURE);
@@ -118,7 +142,14 @@ public class DigitalHealthCareIsAccountExistDAO  extends JdbcDaoSupport{
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 		Object[] inputs = new Object[]{userId,deviceId};
 		try{
+			// Capture service Start time
+			 TimeCheck time=new TimeCheck();
+			 testServiceTime sessionTimeCheck=new testServiceTime();
+			 String serviceStartTime=time.getTimeZone();
 			verifyDevice=(DigitalHealthCareUserDeviceModel)getJdbcTemplate().queryForObject(DigiHealthCareAccountExistQuery.SQL_CHECK_DEVICEID,inputs,new DigitalHealthCareIsAccountExistDeviceUserIdMapper());
+			 String serviceEndTime=time.getTimeZone();
+			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+			 logger.info("Is account exist check device id query time:: " +result);
 			if(verifyDevice!=null){
 				//cisResults.setResultObject(verifyDevice);
 				

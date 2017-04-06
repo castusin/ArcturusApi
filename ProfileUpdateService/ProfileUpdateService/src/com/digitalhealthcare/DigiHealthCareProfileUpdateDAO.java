@@ -5,6 +5,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import org.apache.log4j.Logger;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -13,6 +14,8 @@ import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
 import com.cis.CISConstants;
 import com.cis.CISResults;
+import com.cis.TimeCheck;
+import com.cis.testServiceTime;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
@@ -44,34 +47,7 @@ public class DigiHealthCareProfileUpdateDAO extends JdbcDaoSupport {
 	 * @param dob
 	 * @return
 	 */
-/*	public CISResults updateProfile(String appId,String userId,String accountType,String firstName,String lastName,String emailId,String gender,String photo,String dob ) {
-		DigihealthCareSaveProfile profileUpdate=new DigihealthCareSaveProfile();
-		CISResults cisResults=new CISResults();
-		Calendar cal = Calendar.getInstance();
-		DateFormat dateFormat = new SimpleDateFormat(CISConstants.DATE_FORMAT);
-		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
-		//Object[] inputs = new Object[]{appId,medicalId,accountType,firstName,lastName,emailId,gender,photo,dob,dateFormat.format(cal.getTime()),userId};
-		Object[] inputs = new Object[]{appId,accountType,firstName,lastName,emailId,gender,photo,dob,dateFormat.format(cal.getTime()),userId};
-		try{
-			getJdbcTemplate().update(DigiHealthCareProfileUpdateQuery.SQL_UPDATEPROFILE,inputs);
-			
-			profileUpdate.setFirstName(firstName);
-			profileUpdate.setLastName(lastName);
-			
-			profileUpdate.setEmailId(emailId);
-			profileUpdate.setUserId(userId);
-			profileUpdate.setGender(gender);
-			
-			profileUpdate.setDob(dob);
-			cisResults.setResultObject(profileUpdate);
-		} catch (DataAccessException e) {
-			e.printStackTrace();
-			cisResults.setResponseCode(CISConstants.RESPONSE_FAILURE);
-			cisResults.setErrorMessage("Data Access Error");
-		}
 
-   		return cisResults;  
-	}*/
 
 	public CISResults updateProfile(String appId,String phoneNumber, String userId,String accountType, String firstName, String lastName,
 			 String emailId, String gender,String photo, String dob) {
@@ -79,11 +55,18 @@ public class DigiHealthCareProfileUpdateDAO extends JdbcDaoSupport {
 		CISResults cisResults=new CISResults();
 		Calendar cal = Calendar.getInstance();
 		DateFormat dateFormat = new SimpleDateFormat(CISConstants.DATE_FORMAT);
-		
+		Logger logger = Logger.getLogger(DigiHealthCareProfileUpdateDAO.class);
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 		Object[] inputs = new Object[]{appId,accountType,firstName,lastName,emailId,gender,photo,dob,dateFormat.format(cal.getTime()),userId};
 		try{
+			// Capture service Start time
+			 TimeCheck time=new TimeCheck();
+			 testServiceTime sessionTimeCheck=new testServiceTime();
+			 String serviceStartTime=time.getTimeZone();
 		getJdbcTemplate().update(DigiHealthCareProfileUpdateQuery.SQL_UPDATEPROFILE,inputs);
+		 String serviceEndTime=time.getTimeZone();
+		 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+		 logger.info("update profile query time:: " +result);
 			profileUpdate.setFirstName(firstName);
 			profileUpdate.setLastName(lastName);
 			profileUpdate.setAppId(appId);
