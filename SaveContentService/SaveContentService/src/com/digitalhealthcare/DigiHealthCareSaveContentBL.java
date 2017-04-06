@@ -21,7 +21,7 @@ public class DigiHealthCareSaveContentBL {
 		CISResults cisResult = saveContentDAO.saveContent(userId,contentName,contentType,contentText,urlType);
 		
 		
-		logger.debug("DigitalHealthCare:save content dao service" +cisResult );
+		logger.info("DigitalHealthCare:save content dao service" +cisResult );
 		/* if(OTConstants.YES.equalsIgnoreCase(userType))
          { */
        

@@ -11,6 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.cis.CISConstants;
 import com.cis.CISResults;
+import com.cis.TimeCheck;
 import com.cis.testServiceTime;
 /**
  * Adds country code to phone number and checks if account exists 
@@ -34,14 +35,9 @@ public class DigitalHealtCareIsAccountExistBL {
 	//	SMSCommunication smsCommunicaiton = new SMSCommunication();
 		
 		// Capture service Start time
-				 testServiceTime seriveTimeCheck=new testServiceTime();
-				 Calendar current = Calendar.getInstance();
-			      DateFormat formatterTime = new SimpleDateFormat(CISConstants.DATE_FORMAT);
-			      TimeZone objTime = TimeZone.getTimeZone(CISConstants.TIME_ZONE);
-			      formatterTime.setTimeZone( objTime);
-			    //  System.out.println("Local:: " +current.getTime());
-			    //  System.out.println("CST:: "+ formatterTime.format(current.getTime()));
-				  String serviceStartTime=formatterTime.format(current.getTime());
+		TimeCheck time=new TimeCheck();
+		 testServiceTime seriveTimeCheck=new testServiceTime();
+		 String serviceStartTime=time.getTimeZone();
 		
 		
 		
@@ -76,13 +72,7 @@ public class DigitalHealtCareIsAccountExistBL {
 						 cisResult.setResultObject(accountExistModel);
 					 }
 					 
-					 
-					 
 				 }
-		
-		
-		
-		
 		
 		
 		if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_FAILURE)&&  (cisResult.getErrorMessage().equalsIgnoreCase(CISConstants.ACCOUNT_STATUS2))) 
@@ -100,25 +90,13 @@ public class DigitalHealtCareIsAccountExistBL {
 		
 		
 		
-		
-		
 		// Capture Service End time
-		  Calendar ServiceEnd= Calendar.getInstance();
-	      DateFormat formatter1 = new SimpleDateFormat(CISConstants.DATE_FORMAT);
-	      TimeZone obj1 = TimeZone.getTimeZone(CISConstants.TIME_ZONE);
-	      formatter1.setTimeZone(obj1);
-		  String serviceEndTime=formatter1.format(ServiceEnd.getTime());
-		  seriveTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
-		
+		 String serviceEndTime=time.getTimeZone();
+		  long result=seriveTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+		  logger.info("Database time for is account exist service:: " +result );
 		return cisResult;
 	}
 
-	
-	
-	
-	
-	
-	
 	
 	public CISResults checkPhoneNumberDeviceId(String phoneNumber,
 			String deviceId) {
@@ -131,12 +109,6 @@ public class DigitalHealtCareIsAccountExistBL {
 	}
 
 
-
-
-
-
-
-
 	public CISResults checkDeviceId(String userId, String deviceId) {
 		// TODO Auto-generated method stub
 		CISResults cisResult = new CISResults();
@@ -147,7 +119,4 @@ public class DigitalHealtCareIsAccountExistBL {
 	}
 	
 	
-	
-	
-
 }

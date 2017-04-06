@@ -4,11 +4,14 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import org.apache.log4j.Logger;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 import com.cis.CISConstants;
 import com.cis.CISResults;
+import com.cis.TimeCheck;
+import com.cis.testServiceTime;
 
 /**
  * User Logout Service
@@ -36,16 +39,19 @@ public class DigihealthCareUserLogoutDAO extends JdbcDaoSupport {
 			Calendar cal = Calendar.getInstance();
 			DateFormat dateFormat = new SimpleDateFormat(CISConstants.GS_DATE_FORMAT);
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
-		
+		Logger logger = Logger.getLogger(DigihealthCareUserLogoutDAO.class);
 		
 		Object[] inputs = new Object[]{sessionStatus,userId,sessionId};
 		try{
-			
-			getJdbcTemplate().update(DigihealthCareUserLogoutQuery.SQL_USERLOGOUT,inputs);
-			
-		
-			
-				
+			// Capture service Start time
+			 TimeCheck time=new TimeCheck();
+			 testServiceTime sessionTimeCheck=new testServiceTime();
+			 String serviceStartTime=time.getTimeZone();
+			 getJdbcTemplate().update(DigihealthCareUserLogoutQuery.SQL_USERLOGOUT,inputs);
+			 String serviceEndTime=time.getTimeZone();
+			 long result=sessionTimeCheck.getServiceTime(serviceStartTime,serviceEndTime);
+			 logger.info("user logout query time:: " +result);
+						
 		} catch (DataAccessException e) {
 			e.printStackTrace();
 		
@@ -61,26 +67,3 @@ public class DigihealthCareUserLogoutDAO extends JdbcDaoSupport {
 
 
 }
-/*Object[] input = new Object[]{userId,sessionId};
-
-
-try{
-	
-	userLogout=(DigihealthCareUserLogout)getJdbcTemplate().queryForObject(DigihealthCareUserLogoutQuery.SQL_GETDELETEIND,input, new DigihealthCareUserLogoutMapper());
-	
-	userLogout.setDeleteInd(userLogout.getDeleteInd());
-	
-	if(sessionId==deleteInd){
-		cisResults.setResponseCode(CISConstants.DELETE_IND_Y);
-		}
-	userLogout.setUserId(userId);
-	userLogout.setSessionId(sessionId);
-	
-	cisResults.setResultObject(userLogout);
-		
-} catch (DataAccessException e) {
-	e.printStackTrace();
-
-	cisResults.setResponseCode(CISConstants.RESPONSE_FAILURE);
-	cisResults.setErrorMessage("Failed to login to the system");
-}*/

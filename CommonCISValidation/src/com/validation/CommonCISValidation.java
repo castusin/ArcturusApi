@@ -216,12 +216,12 @@ public CISResults  addPatientValidation(DigihealthCareSaveProfile savePatient,Ht
 	            if  (st==null || st.equals(""))
 	            	cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
 	          }   
-		 System.out.println(cisResult.getResponseCode()); 
+		
 		 if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
 		 {
 			 String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
 		     Boolean b = emailId.matches(EMAIL_REGEX);
-		     System.out.println("is e-mail: "+emailId+" :Valid = " + b);
+		    
 			 if(Boolean.FALSE.equals(b))
 			 {
 				 cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
@@ -316,7 +316,7 @@ public CISResults  addPatientValidation(DigihealthCareSaveProfile savePatient,Ht
 	            if  (st==null || st.equals(""))
 	            	cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
 	          }   
-		 System.out.println(cisResult.getResponseCode()); 
+		
 		
 		return cisResult;
 	}

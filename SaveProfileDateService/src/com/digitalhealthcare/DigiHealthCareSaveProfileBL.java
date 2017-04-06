@@ -14,6 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.cis.CISConstants;
 import com.cis.CISResults;
+import com.cis.TimeCheck;
 import com.cis.testServiceTime;
 
 public class DigiHealthCareSaveProfileBL {
@@ -27,24 +28,17 @@ public class DigiHealthCareSaveProfileBL {
 		  CISResults cisResult = new CISResults();
 		  List<DigiHealthCareViewPatientsService> patientDetails = null;
 		// Capture service Start time
-		  testServiceTime seriveTimeCheck=new testServiceTime();
-		  Calendar current = Calendar.getInstance();
-	      DateFormat formatterTime = new SimpleDateFormat(CISConstants.DATE_FORMAT);
-	      TimeZone objTime = TimeZone.getTimeZone("CST");
-	      formatterTime.setTimeZone( objTime);
-	      System.out.println("Local:: " +current.getTime());
-	      System.out.println("CST:: "+ formatterTime.format(current.getTime()));
-		  String serviceStartTime=formatterTime.format(current.getTime());
-		
+		  TimeCheck time=new TimeCheck();
+			 testServiceTime seriveTimeCheck=new testServiceTime();
+			 String serviceStartTime=time.getTimeZone();
 		
 		  final Logger logger = Logger.getLogger(DigiHealthCareSaveProfileBL.class);
 		  DigihealthCareSaveProfile homeCareRegistration=new DigihealthCareSaveProfile();
 		  Calendar currentdate = Calendar.getInstance();
 	      DateFormat formatter = new SimpleDateFormat(CISConstants.GS_DATE_FORMAT);
-	      TimeZone obj = TimeZone.getTimeZone("CST");
+	      TimeZone obj = TimeZone.getTimeZone(CISConstants.TIME_ZONE);
 	      formatter.setTimeZone(obj);
-	      System.out.println("Local:: " +currentdate.getTime());
-	      System.out.println("CST:: "+ formatter.format(currentdate.getTime()));
+	      
 		  String sessionId = UUID.randomUUID().toString();
 		  String deleteInd=CISConstants.DELETE_IND;
 		  String userId=DigestUtils.sha1Hex(sessionId);
@@ -121,15 +115,11 @@ public class DigiHealthCareSaveProfileBL {
 		  }
 		
 		// Capture Service End time
-		  Calendar ServiceEnd= Calendar.getInstance();
-	      DateFormat formatter1 = new SimpleDateFormat(CISConstants.DATE_FORMAT);
-	      TimeZone obj1 = TimeZone.getTimeZone("CST");
-	      formatter1.setTimeZone(obj1);
-		  String serviceEndTime=formatter1.format(ServiceEnd.getTime());
-		  seriveTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+		  String serviceEndTime=time.getTimeZone();
+		  long result=seriveTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+		  logger.info("Database time for save profile service:: " +result );
 		  
-		  
-		logger.debug("Digital HealthCare Rigistration BL service" +cisResult );
+		
 		return cisResult;
 	}
 

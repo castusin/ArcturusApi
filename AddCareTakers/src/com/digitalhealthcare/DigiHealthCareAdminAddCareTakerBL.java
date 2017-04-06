@@ -16,8 +16,8 @@ public class DigiHealthCareAdminAddCareTakerBL {
 	
 
 	public CISResults addCareTakers(String userId, String phoneNumber) {
-		// TODO Auto-generated method stub
 		
+		//
 		 CISResults cisResult = adminCareTakerDAO.iscareTakerExists(userId,phoneNumber);
 		    
 		 if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
@@ -37,9 +37,7 @@ public class DigiHealthCareAdminAddCareTakerBL {
 			  }
 		    
 		  }
-		 
-		 
-		 
+		
 		return cisResult;
 	}
 

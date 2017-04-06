@@ -45,7 +45,8 @@ public class CISConstants {
 	public static final String PASSWORD="arcturus1@3";
 	public static final String SENDERID="KAPNFO";
 	public static final String TYPE="longsms";
-	
+	public static final String AccountType="P";
+	public static final String AccountType2="F";
 
 	public CISConstants() {
 		// TODO Auto-generated constructor stub

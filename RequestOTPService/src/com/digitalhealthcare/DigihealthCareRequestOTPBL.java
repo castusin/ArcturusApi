@@ -14,6 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.cis.CISConstants;
 import com.cis.CISResults;
 import com.cis.SMSCommunication;
+import com.cis.TimeCheck;
 import com.cis.checkOTPTime;
 import com.cis.testServiceTime;
 
@@ -43,16 +44,9 @@ public class DigihealthCareRequestOTPBL {
 		      final Logger logger = Logger.getLogger(DigihealthCareRequestOTPBL.class);
 		      checkOTPTime otpTimeCheck=new checkOTPTime();
 		   // Capture service Start time
+			  TimeCheck time=new TimeCheck();
 				 testServiceTime seriveTimeCheck=new testServiceTime();
-				 Calendar current = Calendar.getInstance();
-			      DateFormat formatterTime = new SimpleDateFormat(CISConstants.DATE_FORMAT);
-			      TimeZone objTime = TimeZone.getTimeZone(CISConstants.TIME_ZONE);
-			      formatterTime.setTimeZone( objTime);
-			    //  System.out.println("Local:: " +current.getTime());
-			    //  System.out.println("CST:: "+ formatterTime.format(current.getTime()));
-				  String serviceStartTime=formatterTime.format(current.getTime());
-		      
-		      
+				 String serviceStartTime=time.getTimeZone();
 		      
 		      String contact = CISConstants.USA_COUNTRY_CODE+phoneNumber;
 		      String deleteInd=CISConstants.DELETE_IND;
@@ -84,19 +78,11 @@ public class DigihealthCareRequestOTPBL {
 				  }
 			  }
 	
-				// Capture Service End time
-			  Calendar ServiceEnd= Calendar.getInstance();
-		      DateFormat formatter1 = new SimpleDateFormat(CISConstants.DATE_FORMAT);
-		      TimeZone obj1 = TimeZone.getTimeZone(CISConstants.TIME_ZONE);
-		      formatter1.setTimeZone(obj1);
-			  String serviceEndTime=formatter1.format(ServiceEnd.getTime());
+			// Capture Service End time
+			  String serviceEndTime=time.getTimeZone();
 			  seriveTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
-			  
-			  
-			  
-			  
-			  
-			  
+			  logger.info("Database time for request otp service:: " +cisResults );
+			
 		return cisResults;
 		
 	}
