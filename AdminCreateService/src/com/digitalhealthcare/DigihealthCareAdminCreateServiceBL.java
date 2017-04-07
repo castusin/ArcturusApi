@@ -32,9 +32,7 @@ public class DigihealthCareAdminCreateServiceBL {
 	      DateFormat formatterTime = new SimpleDateFormat(CISConstants.DATE_FORMAT);
 	      TimeZone objTime = TimeZone.getTimeZone(CISConstants.TIME_ZONE);
 	      formatterTime.setTimeZone( objTime);
-	    //  System.out.println("Local:: " +current.getTime());
-	    //  System.out.println("CST:: "+ formatterTime.format(current.getTime()));
-		  String serviceStartTime=formatterTime.format(current.getTime());
+	   	  String serviceStartTime=formatterTime.format(current.getTime());
 	
 		  Calendar currentdate = Calendar.getInstance();
 	      DateFormat formatter = new SimpleDateFormat(CISConstants.GS_DATE_FORMAT);
@@ -43,11 +41,7 @@ public class DigihealthCareAdminCreateServiceBL {
 	      String saveDate=formatter.format(currentdate.getTime());
 	      String careTakerphone="";
 	      String sessionId = UUID.randomUUID().toString();
-	     /* String sessionId = UUID.randomUUID().toString();
-		  String deleteInd=CISConstants.DELETE_IND;
-		  String userId=DigestUtils.sha1Hex(sessionId);*/
-	      /*Random rnd = new Random();
-	      int userId = 100000 + rnd.nextInt(900000);*/
+	    
 	      String userId=DigestUtils.sha1Hex(sessionId);
 	      String upToNCharacters = userId.substring(0, Math.min(userId.length(), 8));
 	      userId=upToNCharacters;
