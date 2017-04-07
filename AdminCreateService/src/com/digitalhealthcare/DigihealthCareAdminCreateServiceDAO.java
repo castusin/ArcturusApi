@@ -32,7 +32,11 @@ import com.cis.testServiceTime;
 				getJdbcTemplate().update(DigihealthCareAdminCreateServiceQuery.SQL_PATIENT_INFO,appId,userId,accountType,firstName,lastName,phoneNumber,password,emailId,gender,photo,dob,saveDate);
 				 String serviceEndTime=time.getTimeZone();
 				 sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+<<<<<<< HEAD
 				 logger.info("patient info query time:: " +cisResults);
+=======
+				 logger.info("Add patient info query time:: " +cisResults);
+>>>>>>> 022f9f3f201812639f081cfe54fd8a6941df2f5f
 			} catch (DataAccessException e) {
 				e.printStackTrace();
 			
@@ -77,6 +81,7 @@ import com.cis.testServiceTime;
 	   		return cisResults; 
 		}
 
+<<<<<<< HEAD
 		public CISResults isPatinetExists(String phoneNumber) {
 			// TODO Auto-generated method stub
 			Logger logger = Logger.getLogger(DigihealthCareAdminCreateServiceDAO.class);
@@ -111,5 +116,7 @@ import com.cis.testServiceTime;
 	   		return cisResults; 
 		}
 
+=======
+>>>>>>> 022f9f3f201812639f081cfe54fd8a6941df2f5f
 
 	}

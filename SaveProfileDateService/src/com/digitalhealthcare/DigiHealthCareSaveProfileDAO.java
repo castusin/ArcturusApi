@@ -63,7 +63,11 @@ public class DigiHealthCareSaveProfileDAO extends JdbcDaoSupport {
 			getJdbcTemplate().update(DigiHealthCareUpdatePasswordServiceQuery.SQL_UPDATEPASSWORD,inputs);		
 			 String serviceEndTime=time.getTimeZone();
 			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+<<<<<<< HEAD
 			 logger.info("save profile data query time:: " +result);
+=======
+			 logger.info("update passeord query time:: " +result);
+>>>>>>> 022f9f3f201812639f081cfe54fd8a6941df2f5f
 		} catch (DataAccessException e) {
 			e.printStackTrace();
 		
