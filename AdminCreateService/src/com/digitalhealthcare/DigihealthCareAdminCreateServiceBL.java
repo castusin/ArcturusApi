@@ -32,14 +32,9 @@ public class DigihealthCareAdminCreateServiceBL {
 	      DateFormat formatterTime = new SimpleDateFormat(CISConstants.DATE_FORMAT);
 	      TimeZone objTime = TimeZone.getTimeZone(CISConstants.TIME_ZONE);
 	      formatterTime.setTimeZone( objTime);
-<<<<<<< HEAD
 	    //  System.out.println("Local:: " +current.getTime());
 	    //  System.out.println("CST:: "+ formatterTime.format(current.getTime()));
 		  String serviceStartTime=formatterTime.format(current.getTime());
-=======
-	   	  String serviceStartTime=formatterTime.format(current.getTime());
->>>>>>> 022f9f3f201812639f081cfe54fd8a6941df2f5f
-	
 		  Calendar currentdate = Calendar.getInstance();
 	      DateFormat formatter = new SimpleDateFormat(CISConstants.GS_DATE_FORMAT);
 	      TimeZone obj = TimeZone.getTimeZone(CISConstants.TIME_ZONE);
@@ -47,50 +42,38 @@ public class DigihealthCareAdminCreateServiceBL {
 	      String saveDate=formatter.format(currentdate.getTime());
 	      String careTakerphone="";
 	      String sessionId = UUID.randomUUID().toString();
-<<<<<<< HEAD
 	     /* String sessionId = UUID.randomUUID().toString();
 		  String deleteInd=CISConstants.DELETE_IND;
 		  String userId=DigestUtils.sha1Hex(sessionId);*/
 	      /*Random rnd = new Random();
 	      int userId = 100000 + rnd.nextInt(900000);*/
-=======
-	    
->>>>>>> 022f9f3f201812639f081cfe54fd8a6941df2f5f
 	      String userId=DigestUtils.sha1Hex(sessionId);
 	      String upToNCharacters = userId.substring(0, Math.min(userId.length(), 8));
 	      userId=upToNCharacters;
 	      String contact = savePatient.getPhoneNumber();
-	      String phoneNumber=CISConstants.USA_COUNTRY_CODE+contact;
-<<<<<<< HEAD
-	      
+	      String phoneNumber=CISConstants.USA_COUNTRY_CODE+contact; 
 		  //Need to change method name
 	      CISResults cisResult = adminCreateServiceDAO.isPatinetExists(phoneNumber);
-	      
-=======
-		
-	      CISResults cisResult = adminCreateServiceDAO.isAccountExists(phoneNumber);
->>>>>>> 022f9f3f201812639f081cfe54fd8a6941df2f5f
 	      if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
 		  {
 	         cisResult = adminCreateServiceDAO.addPatients(savePatient.getAppId(),userId,savePatient.getAccountType(),savePatient.getFirstName(),savePatient.getLastName(),phoneNumber,savePatient.getPassword(),savePatient.getEmailId(),savePatient.getGender(),savePatient.getPhoto(),savePatient.getDob(),saveDate,sessionId);
 		  }
-		
-<<<<<<< HEAD
+
 	      //Capture Service End time
-=======
+
 	   // Capture Service End time
->>>>>>> 022f9f3f201812639f081cfe54fd8a6941df2f5f
+
 		  Calendar ServiceEnd= Calendar.getInstance();
 	      DateFormat formatter1 = new SimpleDateFormat(CISConstants.DATE_FORMAT);
 	      TimeZone obj1 = TimeZone.getTimeZone(CISConstants.TIME_ZONE);
 	      formatter1.setTimeZone(obj1);
 		  String serviceEndTime=formatter1.format(ServiceEnd.getTime());
 		  long result=seriveTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
-<<<<<<< HEAD
+
 		  logger.info("Admin update profile query time:: " +result);
-=======
+
 		  logger.info("Database time for Add patients service:: " +result);
->>>>>>> 022f9f3f201812639f081cfe54fd8a6941df2f5f
+
 		return cisResult;
 		
 	}
