@@ -53,14 +53,16 @@ public class DigihealthCareAdminCreateServiceBL {
 	      userId=upToNCharacters;
 	      String contact = savePatient.getPhoneNumber();
 	      String phoneNumber=CISConstants.USA_COUNTRY_CODE+contact;
-		
-	      CISResults cisResult = adminCreateServiceDAO.isAccountExists(phoneNumber);
+	      
+		  //Need to change method name
+	      CISResults cisResult = adminCreateServiceDAO.isPatinetExists(phoneNumber);
+	      
 	      if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
 		  {
 	         cisResult = adminCreateServiceDAO.addPatients(savePatient.getAppId(),userId,savePatient.getAccountType(),savePatient.getFirstName(),savePatient.getLastName(),phoneNumber,savePatient.getPassword(),savePatient.getEmailId(),savePatient.getGender(),savePatient.getPhoto(),savePatient.getDob(),saveDate,sessionId);
 		  }
 		
-	   // Capture Service End time
+	      //Capture Service End time
 		  Calendar ServiceEnd= Calendar.getInstance();
 	      DateFormat formatter1 = new SimpleDateFormat(CISConstants.DATE_FORMAT);
 	      TimeZone obj1 = TimeZone.getTimeZone(CISConstants.TIME_ZONE);

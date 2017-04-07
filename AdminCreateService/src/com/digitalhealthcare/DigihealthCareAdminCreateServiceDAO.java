@@ -77,5 +77,39 @@ import com.cis.testServiceTime;
 	   		return cisResults; 
 		}
 
+		public CISResults isPatinetExists(String phoneNumber) {
+			// TODO Auto-generated method stub
+			Logger logger = Logger.getLogger(DigihealthCareAdminCreateServiceDAO.class);
+			DigihealthCareAdminCreateService verifyPhoneNumber;
+			CISResults cisResults=new CISResults();
+			cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+			String accountType=CISConstants.AccountType;
+			Object[] inputs = new Object[]{phoneNumber,accountType};
+			try{
+				// Capture service Start time
+				 TimeCheck time=new TimeCheck();
+				 testServiceTime sessionTimeCheck=new testServiceTime();
+				 String serviceStartTime=time.getTimeZone();
+				 verifyPhoneNumber=(DigihealthCareAdminCreateService)getJdbcTemplate().queryForObject(DigiHealthCareAdminAddCareTakerQuery.SQL_CHECK_PATIENT ,inputs,new DigihealthCareAdminCreateServiceMapper());
+				 String serviceEndTime=time.getTimeZone();
+				 sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+				 logger.info("check CheckPaitnet query time:: " +cisResults);
+				 
+				 if(verifyPhoneNumber!=null){
+					cisResults.setResponseCode(CISConstants.RESPONSE_FAILURE);
+					cisResults.setErrorMessage(CISConstants.ACCOUNT_STATUS5);
+					//cisResults.setResultObject(verifyPhoneNumber);
+				} 
+			
+				
+				
+			} catch (DataAccessException e) {
+				e.printStackTrace();
+				cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+				
+			}
+	   		return cisResults; 
+		}
+
 
 	}
