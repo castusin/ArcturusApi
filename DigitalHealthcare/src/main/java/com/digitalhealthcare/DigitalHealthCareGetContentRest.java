@@ -1,6 +1,8 @@
 package com.digitalhealthcare;
 
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,9 +37,9 @@ public class DigitalHealthCareGetContentRest {
 	 */
 	@RequestMapping(value="/getContentData",method=RequestMethod.GET,produces={"application/json"})
 
-	 public String getContentData(@RequestParam ("userId") String userId, @RequestParam ("contentName") String contentName,@RequestParam ("sessionId") String sessionId){
+	 public String getContentData(@RequestParam ("userId") String userId, @RequestParam ("contentName") String contentName,@RequestParam ("sessionId") String sessionId,HttpServletRequest request){
 		 Logger logger = Logger.getLogger(DigitalHealthCareGetContentRest.class);
-			String getContentParameters = "userId=" +userId + "&contentName=" + contentName ;
+		 String getContentParameters = "userId=" +userId + "&contentName=" + contentName ;
 			 logger.info(" DigitalHealthCare:Request OTP :"+getContentParameters);
 		logger.info(" DigitalHealthCare:contentData :"+getContentParameters);
 		

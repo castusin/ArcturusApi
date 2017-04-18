@@ -23,7 +23,7 @@ public class SMSCommunication {
          //KAP SYSTEMS PROVIDERS LOGIN DETAILS DEMO ACCOUNT DETAILS
          // TODO: Remove hard coded data.
          String Username ="arcturuscare";
-         String Password = "arcturus1@34";
+         String Password = "arcturus1@3";
          String SenderID = "KAPNFO"; 
          String Type="longsms";
          String Message = "Your OTP for Arcturus is "+otpNumber ;
@@ -97,7 +97,7 @@ public class SMSCommunication {
          //KAP SYSTEMS PROVIDERS LOGIN DETAILS DEMO ACCOUNT DETAILS
          // TODO: Remove hard coded data.
          String Username ="arcturuscare";
-         String Password = "arcturus1@34";
+         String Password = "arcturus1@3";
          String SenderID = "KAPNFO"; 
          String Type="longsms";
          String Message = "Arcturus :"+firsName +" "+lastName+ "provided feedback" ;
