@@ -10,7 +10,7 @@ public class DigiHealthCareViewPatientsService {
 	public String accountType;
 	public String emailId;
 	public String gender;
-	
+	public String userId;
 
 	
 
@@ -18,7 +18,7 @@ public class DigiHealthCareViewPatientsService {
 
 	public DigiHealthCareViewPatientsService(String firstName, String lastName,
 			String phoneNumber, String accountType, String emailId,
-			String gender) {
+			String gender, String userId) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -26,6 +26,17 @@ public class DigiHealthCareViewPatientsService {
 		this.accountType = accountType;
 		this.emailId = emailId;
 		this.gender = gender;
+		this.userId=userId;
+	}
+
+
+	public String getUserId() {
+		return userId;
+	}
+
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 

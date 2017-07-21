@@ -17,7 +17,7 @@ public class DigiHealthCareViewPatientsServiceMapper implements RowMapper{
 		viewPatients.setPhoneNumber(rs.getString("Phone_no"));
 		viewPatients.setEmailId(rs.getString("Email_id"));
 		viewPatients.setGender(rs.getString("Gender"));
-		
+		viewPatients.setUserId(rs.getString("User_id"));
 		
 		return viewPatients;
 	}

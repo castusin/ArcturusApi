@@ -83,12 +83,12 @@
 	<bean id="AdminProfileUpdateDAO" class="com.digitalhealthcare.DigiHealthCareAdminProfileUpdateDAO">
 		<property name="dataSource" ref="ds" />
 	</bean>
- <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
+<!--  <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
 <property name="driverClassName" value="com.mysql.jdbc.Driver" />  
 <property name="url" value="jdbc:mysql://204.93.169.64:3306/littlepa_homecare"/>  
 <property name="username" value="littlepa_sm"/>  
 <property name="password" value="password1" />  
-</bean> 
+</bean>  -->
 
 <!-- Production DB connections     -->
 
@@ -98,6 +98,13 @@
 <!--   <property name="username" value="castusin_arcturu" />     -->
 <!--   <property name="password" value="arcturus1@3"/>   -->
 <!--   </bean>   -->
-
+ <!-- Production DB connections Arcturus main server    -->
+ 
+  <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">   
+  <property name="driverClassName" value="com.mysql.jdbc.Driver" />   
+  <property name="url" value="jdbc:mysql://198.38.86.61:3306/mathgato_arcturusdb" />   
+  <property name="username" value="mathgato_arcturs" />    
+  <property name="password" value="arcturus1@3"/>  
+  </bean> 
 
 </beans>
