@@ -26,9 +26,98 @@ public class DigihealthCareSaveProfile {
 	public String deviceType;
 	public String deviceId;
 	public String dateTime;
+	
+	public String address;
+	public String landmark;
+	public String city;
+	public String state;
+	public String county;
+	public String zipcode;
+	public float lattitude;
+	public float longitude;
 	//public List<DigihealthCareCareTakersService> careTakerDetails;
 	
 	
+
+	public String getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+	public String getLandmark() {
+		return landmark;
+	}
+
+
+	public void setLandmark(String landmark) {
+		this.landmark = landmark;
+	}
+
+
+	public String getCity() {
+		return city;
+	}
+
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+
+	public String getState() {
+		return state;
+	}
+
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+
+	public String getCounty() {
+		return county;
+	}
+
+
+	public void setCounty(String county) {
+		this.county = county;
+	}
+
+
+	public String getZipcode() {
+		return zipcode;
+	}
+
+
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
+
+
+	public float getLattitude() {
+		return lattitude;
+	}
+
+
+	public void setLattitude(float lattitude) {
+		this.lattitude = lattitude;
+	}
+
+
+	public float getLongitude() {
+		return longitude;
+	}
+
+
+	public void setLongitude(float longitude) {
+		this.longitude = longitude;
+	}
+
 
 	public String getSessionId() {
 		return sessionId;
@@ -93,7 +182,7 @@ public class DigihealthCareSaveProfile {
 			 String firstName, String lastName,
 			String phoneNumber, String password, String emailId, String photo,
 			String accountType, String gender, String dob, Date date,
-			String sessionId, String sessionTimeStamp, String deviceId, String deviceToken, String deviceType, String status, String dateTime) {
+			String sessionId, String sessionTimeStamp, String deviceId, String deviceToken, String deviceType, String status, String dateTime, String address, String landmark, String city, String state, String county, String zipcode, float lattitude, float longitude) {
 		super();
 		this.appId = appId;
 		this.userId = userId;
@@ -115,6 +204,15 @@ public class DigihealthCareSaveProfile {
 		this.deviceType=deviceType;
 		this.status=status;
 		this.dateTime=dateTime;
+		
+		this.address=address;
+		this.landmark=landmark;
+		this.city=city;
+		this.state=state;
+		this.county=county;
+		this.zipcode=zipcode;
+		this.lattitude=lattitude;
+		this.longitude=longitude;
 	}
 
 

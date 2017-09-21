@@ -59,6 +59,7 @@ public class DigiHealthCareSaveProfileBL {
 					homeCareRegistration.setUserId(registration.getUserId());
 					homeCareRegistration.setSessionId(sessionId);
 					homeCareRegistration.setSessionTimeStamp(formatter.format(currentdate.getTime()));
+					homeCareRegistration.setPhoto(registration.getPhoto());
 					cisResult.setResultObject(homeCareRegistration);
 				  }
 		  

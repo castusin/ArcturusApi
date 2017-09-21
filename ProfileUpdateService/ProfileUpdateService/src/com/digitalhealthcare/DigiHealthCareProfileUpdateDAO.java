@@ -49,15 +49,19 @@ public class DigiHealthCareProfileUpdateDAO extends JdbcDaoSupport {
 	 */
 
 
-	public CISResults updateProfile(String appId,String phoneNumber, String userId,String accountType, String firstName, String lastName,
-			 String emailId, String gender,String photo, String dob) {
+	public CISResults updateProfile(String appId, String phoneNumber,
+			String userId, String accountType, String firstName,
+			String lastName, String emailId, String gender, String photo,
+			String dob, String address, String landmark, String city,
+			String state, String county, String zipcode, float lattitude,
+			float longitude) {
 		DigihealthCareSaveProfile profileUpdate=new DigihealthCareSaveProfile();
 		CISResults cisResults=new CISResults();
 		Calendar cal = Calendar.getInstance();
 		DateFormat dateFormat = new SimpleDateFormat(CISConstants.DATE_FORMAT);
 		Logger logger = Logger.getLogger(DigiHealthCareProfileUpdateDAO.class);
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
-		Object[] inputs = new Object[]{appId,accountType,firstName,lastName,emailId,gender,photo,dob,dateFormat.format(cal.getTime()),userId};
+		Object[] inputs = new Object[]{appId,accountType,firstName,lastName,emailId,gender,photo,dob,dateFormat.format(cal.getTime()),address,landmark,city,state,county,zipcode,lattitude,longitude,userId};
 		try{
 			// Capture service Start time
 			 TimeCheck time=new TimeCheck();
@@ -86,6 +90,8 @@ public class DigiHealthCareProfileUpdateDAO extends JdbcDaoSupport {
 
    		return cisResults;  
 	}
+
+	
 
 	
 }

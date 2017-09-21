@@ -31,7 +31,7 @@ public class DigiHealthCareSaveProfileDAO extends JdbcDaoSupport {
 			 TimeCheck time=new TimeCheck();
 			 testServiceTime sessionTimeCheck=new testServiceTime();
 			 String serviceStartTime=time.getTimeZone();
-			getJdbcTemplate().update(DigitHealthCareSaveProfileQuery.SQL_GETHOMECAREREGISTRATION,appId,userId,accountType,firstName,lastName,contact,password,emailId,gender,photo,dob,date );
+			getJdbcTemplate().update(DigitHealthCareSaveProfileQuery.SQL_GETHOMECAREREGISTRATION,appId,userId,accountType,firstName,lastName,contact,password,emailId,gender,photo,dob,date);
 			 String serviceEndTime=time.getTimeZone();
 			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
 			 logger.info("save profile data query time:: " +result);
@@ -171,6 +171,8 @@ public class DigiHealthCareSaveProfileDAO extends JdbcDaoSupport {
 		}
   		return result; 
 	}
+
+	
 
 	
 	

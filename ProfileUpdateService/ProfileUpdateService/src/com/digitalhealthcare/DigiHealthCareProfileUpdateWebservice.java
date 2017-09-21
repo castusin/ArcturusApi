@@ -26,7 +26,7 @@ public class DigiHealthCareProfileUpdateWebservice {
 	 */
 	public CISResults updateProfile(DigihealthCareSaveProfile updateProfile) {
 		
-		 CISResults cisResult = null;
+		 CISResults cisResult = new CISResults();
 		try {
 			cisResult = profileUpdateBL.updateProfile(updateProfile);
 			 logger.info(" DigitalHealthCare:Request OTP :"+cisResult);
