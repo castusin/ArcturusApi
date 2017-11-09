@@ -16,5 +16,8 @@ public class DigiHealthCareAccountExistQuery {
 	public static String SQL_CHECK_DEVICE_PHONE = "SELECT User_id,Device_id from User_Devices where Device_id=? "; 
 	public static String SQL_CHECK_DEVICEID = " SELECT User_id,Device_id from User_Devices where User_id=? and Device_id=? "; 
 
+	public static String SQL_SAVEDEVICEID = "insert into User_Devices (User_id,Device_Token,Status,Device_Type,DateTime,Device_id)"+"values(?,?,?,?,?,?)"; 	
+
+
 
 }

@@ -26,6 +26,7 @@ public class CISConstants {
 	public static final String ACCOUNT_STATUS6="Already Added CareTaker to Patient";
 	public static final String ACCOUNT_STATUS2="Account does not exist, please contact admin";
 	public static final String DEVICE_SET_MESSAGE="You are not allowed to access, please contact admin ";
+	public static final String NO_DEVICE_ID="";
 	public static final String ACCOUNT_STATUS3="Passcode time expired, please try again";
 	public static final String PASSCODE_SUCCESS_STATUS="Passcode Sent to Mobile Number";
 	public static final String PASSCODE_FAILURE_STATUS="Passcode Failed to Sent Mobile Number";
@@ -47,6 +48,9 @@ public class CISConstants {
 	public static final String TYPE="longsms";
 	public static final String AccountType="P";
 	public static final String AccountType2="F";
+	public static final String TESTACCOUNT="18686846199";
+	public static final String DEVICETOKEN="123";
+	public static final String DEVICESTATUS="y";
 
 	public CISConstants() {
 		// TODO Auto-generated constructor stub

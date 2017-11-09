@@ -165,6 +165,35 @@ public class DigitalHealthCareIsAccountExistDAO  extends JdbcDaoSupport{
 
 
 
+	public CISResults getUserDetails(String userId, String deviceToken, String status, String deviceType, String createDate, String deviceId) {
+
+
+		Logger logger = Logger.getLogger(DigitalHealthCareIsAccountExistDAO.class);
+		
+		CISResults cisResults=new CISResults();
+		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+		Object[] inputs = new Object[]{userId,deviceToken,status,deviceType,createDate,deviceId};
+		try{
+			// Capture service Start time
+			 TimeCheck time=new TimeCheck();
+			 testServiceTime sessionTimeCheck=new testServiceTime();
+			 String serviceStartTime=time.getTimeZone();
+			 getJdbcTemplate().update(DigiHealthCareAccountExistQuery.SQL_SAVEDEVICEID,inputs);
+			 String serviceEndTime=time.getTimeZone();
+			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+			 logger.info("Is account exist deviceId query time:: " +result);
+			
+		
+		} catch (DataAccessException e) {
+			e.printStackTrace();
+			cisResults.setResponseCode(CISConstants.RESPONSE_FAILURE);
+			cisResults.setErrorMessage(CISConstants.ACCOUNT_STATUS2);
+		}
+   		return cisResults; 
+	}
+
+
+
 	
 
 }

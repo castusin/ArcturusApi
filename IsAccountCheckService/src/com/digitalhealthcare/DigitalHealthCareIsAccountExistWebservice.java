@@ -14,11 +14,12 @@ public class DigitalHealthCareIsAccountExistWebservice {
 	/**
 	 * 
 	 * @param phoneNumber
+	 * @param deviceType 
 	 * @return
 	 */
-	public CISResults isAccountExists(String phoneNumber,String deviceId) {
+	public CISResults isAccountExists(String phoneNumber,String deviceId, String deviceType) {
 		// TODO Auto-generated method stub
-		CISResults cisResult = digiIsAccountExistBL.isAccountExists(phoneNumber,deviceId);
+		CISResults cisResult = digiIsAccountExistBL.isAccountExists(phoneNumber,deviceId,deviceType);
 		return cisResult;
 	}
 }

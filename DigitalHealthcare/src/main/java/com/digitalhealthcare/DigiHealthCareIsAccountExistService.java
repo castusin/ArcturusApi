@@ -39,7 +39,7 @@ public class DigiHealthCareIsAccountExistService {
 	@RequestMapping(value="/isAccountExists",method=RequestMethod.GET,produces={"application/json"})
 
 
-	 public String isAccountExists(HttpServletRequest request,@RequestParam ("phoneNumber") String phoneNumber,@RequestParam ("deviceId") String deviceId) throws Throwable{
+	 public String isAccountExists(HttpServletRequest request,@RequestParam ("phoneNumber") String phoneNumber,@RequestParam ("deviceId") String deviceId,@RequestParam ("deviceType") String deviceType) throws Throwable{
 		 Logger logger = Logger.getLogger(DigitalHealthCareLoginRest.class);
 		 String isAccountExistsParameters = "phoneNumber=" +phoneNumber ;
 		 logger.info(" DigitalHealthCare:isAccountExists :"+isAccountExistsParameters);
@@ -56,7 +56,7 @@ public class DigiHealthCareIsAccountExistService {
 		  if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
 		  {
 			  DigitalHealthCareIsAccountExistWebservice digiHealthCareIsAccountExist = new DigitalHealthCareIsAccountExistWebservice();
-			  cisResult  = digiHealthCareIsAccountExist.isAccountExists(phoneNumber,deviceId);
+			  cisResult  = digiHealthCareIsAccountExist.isAccountExists(phoneNumber,deviceId,deviceType);
 		  }
 		 
 		// Capture Service End time
